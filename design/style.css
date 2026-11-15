@@ -25,7 +25,7 @@ h1{font-size:40px;line-height:1.2;margin:0 0 24px}
 .photos{grid-template-columns:repeat(3,1fr);gap:12px}.photos .ph{aspect-ratio:3/4}
 .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px}
 .bar h1{margin:0}
-.btn{display:inline-block;background:var(--yellow);color:var(--#fff);text-decoration:none;font-weight:600;padding:8px 26px;border-radius:8px}
+.btn{display:inline-block;background:var(--yellow);color:#fff;text-decoration:none;font-weight:600;padding:8px 26px;border-radius:8px}
 .btn:hover{filter:brightness(.95)}
 .proj{max-width:936px}.proj .main{margin-bottom:40px}
 .proj p{max-width:76ch}
@@ -44,7 +44,7 @@ h1{font-size:40px;line-height:1.2;margin:0 0 24px}
 .about h2{font-size:32px;margin:0 0 8px}
 .top-link{display:block;margin:56px auto 24px;width:max-content;color:var(--yellow);font:400 24px/1.5 'Fredoka',sans-serif;text-decoration:none;border-bottom:5px solid var(--yellow)}
 .band{background:var(--band);text-align:center;padding:8px 20px;font-size:16px}
-.band a{text-decoration:none;color:var(--#fff)}
+.band a{text-decoration:none;color:#fff}
 @media(max-width:700px){
  body{font-size:16px}h1{font-size:30px}
  .nav{gap:20px}.nav a{font-size:18px}.ov{font-size:22px}.logo img{width:70vw}.top.inner .logo img{width:80vw;margin-bottom:-30px}.logo,.top.inner .logo{font-size:40px}
