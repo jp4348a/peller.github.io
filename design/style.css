@@ -66,3 +66,30 @@ nav.home {align-items:center;}
 .audio-btn[aria-pressed="true"] .icon-off{display:none}
 @media(max-width:700px){.audio-btn{width:42px;height:42px;right:8px;bottom:8px}.audio-btn svg{width:22px;height:22px}}
 @media(prefers-reduced-motion:reduce){.audio-btn{transition:none}}
+
+/* Home header: logo top-left, nav links top-right, vertically centered */
+header.home-top{max-width:1100px;margin:0 auto;padding:72px 20px 40px;display:block}
+header.home-top nav.home{display:flex;flex-wrap:nowrap;align-items:center;gap:48px;width:100%}
+header.home-top nav.home a{white-space:nowrap;text-decoration:none;font-size:24px}
+header.home-top nav.home a[aria-current="page"]{color:#ffca1b}
+header.home-top .small-logo{margin-right:auto;flex:0 1 409px;min-width:0;line-height:0}
+header.home-top .small-logo img{display:block;width:100%;height:auto}
+@media (min-width:1140px){header.home-top{padding-left:0;padding-right:0}header.home-top nav.home a:last-child{margin-right:34px}}
+@media (max-width:760px){header.home-top{padding:32px 20px 24px}header.home-top nav.home{flex-wrap:wrap;justify-content:center;gap:12px 28px}header.home-top .small-logo{flex:1 1 100%;margin-right:0}}
+
+/* Hamburger button: hidden on desktop */
+.menu-toggle{display:none}
+.nav-links{display:contents}
+@media (max-width:760px){
+header.home-top nav.home{flex-wrap:wrap;justify-content:space-between;gap:0}
+header.home-top .small-logo{flex:0 1 220px;margin-right:auto}
+.menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;width:48px;height:48px;padding:0;background:none;border:0;cursor:pointer;color:#000}
+.menu-toggle span{display:block;width:28px;height:3px;border-radius:2px;background:currentColor;transition:transform .2s,opacity .2s}
+.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.nav-links{display:none;flex:1 1 100%;flex-direction:column;align-items:center;gap:8px;padding-top:20px}
+.nav-links.open{display:flex}
+header.home-top nav.home .nav-links a{font-size:24px;padding:8px 0}
+}
+@media (prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
