@@ -328,7 +328,7 @@ h1 {
   }
   .grid3,
   .photos {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
   }
   .meta,
