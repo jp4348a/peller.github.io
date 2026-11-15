@@ -55,3 +55,14 @@ h1{font-size:40px;line-height:1.2;margin:0 0 24px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 nav .small-logo img {height:100px;}
 nav.home {align-items:center;}
+/* Video mute/unmute button (added by inline script on each page) */
+.video-wrap{position:relative}
+.audio-btn{position:absolute;right:12px;bottom:12px;z-index:2;display:flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:var(--yellow);color:var(--ink);cursor:pointer;transition:transform .15s,filter .15s}
+.audio-btn:hover{filter:brightness(.95);transform:scale(1.06)}
+.audio-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 3px #fff}
+.audio-btn svg{width:26px;height:26px;display:block}
+.audio-btn .icon-on{display:none}
+.audio-btn[aria-pressed="true"] .icon-on{display:block}
+.audio-btn[aria-pressed="true"] .icon-off{display:none}
+@media(max-width:700px){.audio-btn{width:42px;height:42px;right:8px;bottom:8px}.audio-btn svg{width:22px;height:22px}}
+@media(prefers-reduced-motion:reduce){.audio-btn{transition:none}}

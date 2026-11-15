@@ -13,7 +13,7 @@
 <body>
 <header class="top inner" id="top"><a class="logo" href="index.html" aria-label="Jocelyn Peller, home"><img src="assets/logo.gif" alt="Jocelyn Peller"></a>
 <p class="tagline">Graphic Designer</p><nav class="nav" aria-label="Main"><a href="index.html">DESIGN</a><a href="photography.html">PHOTOGRAPHY</a><a href="about.html">ABOUT</a></nav></header>
-<main class="wrap proj"><h1>Los Angeles 2028 Olympics</h1><video autoplay muted class="video" preload="metadata" playsinline style="aspect-ratio:896/421" aria-label="Los Angeles 2028 Olympics motion graphic" onclick="this.paused ? this.play() : this.pause()"><source src="https://jp4348a.github.io/la2028.mp4" type="video/mp4"><p>Your browser can’t play this video. <a href="assets/la2028.mp4">Download it</a>.</p></video>
+<main class="wrap proj"><h1>Los Angeles 2028 Olympics</h1><video autoplay class="video" preload="metadata" playsinline style="aspect-ratio:896/421" aria-label="Los Angeles 2028 Olympics motion graphic" onclick="this.paused ? this.play() : this.pause()"><source src="https://jp4348a.github.io/la2028.mp4" type="video/mp4"><p>Your browser can’t play this video. <a href="assets/la2028.mp4">Download it</a>.</p></video>
 <div class="split" style="--sc:7fr 5fr"><div><p>The Olympics build community through peaceful competition, celebrating diversity and friendship across hundreds of nations. The opening ceremony motion graphic celebrates the Games’ ability to unite cultures through energy, movement, and shared experience. Inspired by LA’s iconic landscapes and vibrant color, the visual identity captures the city’s sunny, cinematic spirit.</p>
 <div class="meta"><div><h3>DELIVERABLES</h3><ul><li>Los Angeles 2028 Motion Graphic</li><li>Five Pictogram Posters</li></ul></div><div><h3>MY ROLE</h3><ul><li>Motion Design</li><li>Logo Design</li><li>Poster Design</li></ul></div></div></div><div class="ph" style="aspect-ratio:362/421"><span class="im" role="img" aria-label="Los Angeles 2028 Olympics – image 2" style="background-image:url('assets/la2028-2.jpg'),url('assets/la2028-2.jpeg'),url('assets/la2028-2.png'),url('assets/la2028-2.webp')"></span></div></div>
 
@@ -23,5 +23,20 @@
 </div>
 <div class="pn"><span></span><span><a href="whiplash.html">Next &gt;</a></span></div></main>
 <a class="top-link" href="#top">Back To Top ^</a><div class="band"><a href="mailto:jpellerdesign@gmail.com">jpellerdesign@gmail.com</a></div>
+<script>
+(function(){
+var OFF='<svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6M21 9l-5 6"/></svg>';
+var ON='<svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+Array.prototype.forEach.call(document.querySelectorAll('video'),function(v){
+var w=document.createElement('div');w.className='video-wrap';
+w.style.marginBottom=getComputedStyle(v).marginBottom;v.style.marginBottom='0';
+v.parentNode.insertBefore(w,v);w.appendChild(v);
+var b=document.createElement('button');b.type='button';b.className='audio-btn';b.innerHTML=OFF+ON;w.appendChild(b);
+function sync(){var m=v.muted||v.volume===0;b.setAttribute('aria-pressed',m?'false':'true');b.setAttribute('aria-label',m?'Unmute video':'Mute video')}
+b.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted&&v.volume===0)v.volume=1});
+v.addEventListener('volumechange',sync);sync();
+});
+})();
+</script>
 </body>
 </html>

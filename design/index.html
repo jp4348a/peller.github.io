@@ -77,6 +77,19 @@ l.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
 window.matchMedia('(min-width:761px)').addEventListener('change',function(){set(false)});
 })();
+(function(){
+var OFF='<svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6M21 9l-5 6"/></svg>';
+var ON='<svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+Array.prototype.forEach.call(document.querySelectorAll('video'),function(v){
+var w=document.createElement('div');w.className='video-wrap';
+w.style.marginBottom=getComputedStyle(v).marginBottom;v.style.marginBottom='0';
+v.parentNode.insertBefore(w,v);w.appendChild(v);
+var b=document.createElement('button');b.type='button';b.className='audio-btn';b.innerHTML=OFF+ON;w.appendChild(b);
+function sync(){var m=v.muted||v.volume===0;b.setAttribute('aria-pressed',m?'false':'true');b.setAttribute('aria-label',m?'Unmute video':'Mute video')}
+b.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted&&v.volume===0)v.volume=1});
+v.addEventListener('volumechange',sync);sync();
+});
+})();
 </script>
 </body>
 </html>
